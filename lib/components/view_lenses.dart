@@ -95,11 +95,10 @@ class _ViewLensesState extends State<ViewLenses> {
                                 ),
                               ),
                               Positioned(
-                                top: 5,
-                                left: 68,
+                                top: 34,
+                                left: 10,
                                 child: Container(
                                   alignment: Alignment.center,
-                                  padding: EdgeInsets.symmetric(horizontal: 5),
                                   // width: 46,
                                   // height: 30,
                                   decoration: BoxDecoration(
@@ -134,111 +133,120 @@ class _ViewLensesState extends State<ViewLenses> {
                               ),
                             ],
                           ),
-                          Row(
-                            children: [
-                              Container(
-                                height: 80,
-                                // color: Colors.blue,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      alignment: Alignment.center,
-                                      width: 70,
-                                      height: 34,
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 7.0,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          width: 1.0,
-                                          color: Color(0xffE8E8E8),
-                                        ),
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.circular(50),
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            'ريال',
-                                            style: TextStyle(
-                                              color: Color(0xff484848),
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 14,
-                                            ),
-                                          ),
-                                          Text(
-                                            '89',
-                                            style: TextStyle(
-                                              color: Color(0xff2A357C),
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 24,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
+                          Container(
+                            // height: 80,
+                            margin: EdgeInsets.only(top: 10),
+
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  alignment: Alignment.center,
+                                  width: 70,
+                                  height: 34,
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 7.0,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      width: 1.0,
+                                      color: Color(0xffE8E8E8),
                                     ),
-                                  ],
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(50),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'ريال',
+                                        style: TextStyle(
+                                          color: Color(0xff484848),
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                      Text(
+                                        '89',
+                                        style: TextStyle(
+                                          color: Color(0xff2A357C),
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 24,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Container(
-                                height: 80,
-                                padding: EdgeInsets.only(right: 14, top: 10),
-                                // color: Colors.white,
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      'نظارات جلاس طبية',
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(height: 1.3),
-                                    ),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'عدسات مجانية',
-                                          style: TextStyle(
-                                            color: Color(0xff757575),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 14,
-                                        ),
-                                        Container(
-                                          width: 24,
-                                          height: 24,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xffF0B76E),
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                              width: 1,
-                                              color: Color(0xff2A357C),
-                                            ),
-                                          ),
-                                          child: Icon(
-                                            Icons.check,
-                                            size: 12,
-                                            color: Color(0xff2A357C),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                Text(
+                                  'عدسات لاصقة',
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    height: 1.3,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
+
+                          Container(
+                            alignment: Alignment.center,
+                            // height: 80,
+                            // color: Colors.purple,
+                            padding:
+                                EdgeInsets.only(right: 14, top: 10, bottom: 10),
+                            child: Container(
+                              // color: Colors.green,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'الوان متوفرة',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    '10',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffF0B76E),
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        width: 1,
+                                        color: Color(0xff2A357C),
+                                      ),
+                                    ),
+                                    child: Icon(
+                                      Icons.check,
+                                      size: 12,
+                                      color: Color(0xff2A357C),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
                           Container(
                             // color: Colors.green,
                             child: Row(
@@ -411,110 +419,120 @@ class _ViewLensesState extends State<ViewLenses> {
                               ),
                             ],
                           ),
-                          Row(
-                            children: [
-                              Container(
-                                height: 80,
-                                // color: Colors.blue,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      alignment: Alignment.center,
-                                      width: 70,
-                                      height: 34,
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 7.0,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          width: 1.0,
-                                          color: Color(0xffE8E8E8),
-                                        ),
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.circular(50),
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            'ريال',
-                                            style: TextStyle(
-                                              color: Color(0xff484848),
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 14,
-                                            ),
-                                          ),
-                                          Text(
-                                            '89',
-                                            style: TextStyle(
-                                              color: Color(0xff2A357C),
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 24,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
+                          Container(
+                            // height: 80,
+                            margin: EdgeInsets.only(top: 10),
+
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  alignment: Alignment.center,
+                                  width: 70,
+                                  height: 34,
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 7.0,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      width: 1.0,
+                                      color: Color(0xffE8E8E8),
                                     ),
-                                  ],
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(50),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'ريال',
+                                        style: TextStyle(
+                                          color: Color(0xff484848),
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                      Text(
+                                        '89',
+                                        style: TextStyle(
+                                          color: Color(0xff2A357C),
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 24,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Container(
-                                height: 80,
-                                padding: EdgeInsets.only(right: 14, top: 10),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      'نظارات جلاس طبية',
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(height: 1.3),
-                                    ),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'عدسات مجانية',
-                                          style: TextStyle(
-                                            color: Color(0xff757575),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 14,
-                                        ),
-                                        Container(
-                                          width: 24,
-                                          height: 24,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xffF0B76E),
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                              width: 1,
-                                              color: Color(0xff2A357C),
-                                            ),
-                                          ),
-                                          child: Icon(
-                                            Icons.check,
-                                            size: 12,
-                                            color: Color(0xff2A357C),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                Text(
+                                  'عدسات لاصقة',
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    height: 1.3,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
+
+                          Container(
+                            alignment: Alignment.center,
+                            // height: 80,
+                            // color: Colors.purple,
+                            padding:
+                                EdgeInsets.only(right: 14, top: 10, bottom: 10),
+                            child: Container(
+                              // color: Colors.green,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'الوان متوفرة',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    '10',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Container(
+                                    width: 20,
+                                    height: 20,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffF0B76E),
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        width: 1,
+                                        color: Color(0xff2A357C),
+                                      ),
+                                    ),
+                                    child: Icon(
+                                      Icons.check,
+                                      size: 12,
+                                      color: Color(0xff2A357C),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
                           Container(
                             // color: Colors.green,
                             child: Row(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ojos/shared/consts.dart';
 
 class PageViewItems extends StatefulWidget {
   @override
@@ -37,9 +38,7 @@ class PageViewItemsState extends State<PageViewItems> {
           width: 2,
           color: Colors.white,
         ),
-        borderRadius: BorderRadius.all(
-          Radius.circular(10),
-        ),
+        borderRadius: kRadiusMedium,
       ),
     );
   }
@@ -64,11 +63,17 @@ class PageViewItemsState extends State<PageViewItems> {
         children: [
           Container(
             height: 235,
+            // margin: EdgeInsets.only(right: 10),
+            // padding: EdgeInsets.all(5),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(10),
-              ),
-            ),
+                // color: Colors.red,
+
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey[100],
+                    blurRadius: 10,
+                  )
+                ], borderRadius: kRadiusMedium),
             child: PageView(
               controller: _pageViewController,
               onPageChanged: (value) {
@@ -79,18 +84,23 @@ class PageViewItemsState extends State<PageViewItems> {
                 Container(
                   width: _screenSize.width * 0.96,
                   height: 200,
-                  margin: EdgeInsets.all(5),
+                  margin: EdgeInsets.symmetric(horizontal: 5),
                   // color: Colors.teal,
                   child: Stack(
                     children: [
                       Container(
                         width: _screenSize.width * 0.96,
                         height: 290,
+                        decoration: BoxDecoration(
+                          borderRadius: kRadiusMedium,
+                          border: Border.all(
+                            width: 0.7,
+                            color: Color(0xffE8E8E8),
+                          ),
+                        ),
                         // color: Colors.red,
                         child: ClipRRect(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
+                          borderRadius: kRadiusMedium,
                           child: Image.asset(
                             'images/lenses1.png',
                             fit: BoxFit.cover,
@@ -106,9 +116,7 @@ class PageViewItemsState extends State<PageViewItems> {
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
                             color: Color(0xffFBFBFB),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20),
-                            ),
+                            borderRadius: kRadiusLarge,
                           ),
                           child: Center(
                             child: Text(
@@ -135,7 +143,8 @@ class PageViewItemsState extends State<PageViewItems> {
                               color: Color(0xffE8E8E8),
                             ),
                             color: Color(0xff2A357C),
-                            borderRadius: BorderRadius.circular(50),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(50)),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -172,7 +181,7 @@ class PageViewItemsState extends State<PageViewItems> {
                               color: Color(0xffE8E8E8),
                             ),
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(14),
+                            borderRadius: kRadiusMedium,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -201,10 +210,10 @@ class PageViewItemsState extends State<PageViewItems> {
                 Container(
                   // width: _screenSize.width * 0.80,
                   height: 200,
-                  margin: EdgeInsets.all(5),
+                  margin: EdgeInsets.symmetric(horizontal: 5),
                   // color: Colors.teal,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: kRadiusMedium,
                     child: Image.asset(
                       'images/lenses1.png',
                       fit: BoxFit.cover,
@@ -214,10 +223,10 @@ class PageViewItemsState extends State<PageViewItems> {
                 Container(
                   // width: _screenSize.width * 0.80,
                   height: 200,
-                  margin: EdgeInsets.all(5),
+                  margin: EdgeInsets.symmetric(horizontal: 5),
                   // color: Colors.teal,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: kRadiusMedium,
                     child: Image.asset(
                       'images/lenses1.png',
                       fit: BoxFit.cover,
@@ -227,10 +236,13 @@ class PageViewItemsState extends State<PageViewItems> {
                 Container(
                   // width: _screenSize.width * 0.80,
                   height: 200,
-                  margin: EdgeInsets.all(5),
-                  // color: Colors.teal,
+                  margin: EdgeInsets.symmetric(horizontal: 5),
+                  decoration: BoxDecoration(
+                      // color: Colors.teal,
+
+                      ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: kRadiusMedium,
                     child: Image.asset(
                       'images/lenses1.png',
                       fit: BoxFit.cover,

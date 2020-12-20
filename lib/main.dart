@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ojos/pages/home_page.dart';
 import 'package:splashscreen/splashscreen.dart';
-import 'pages/item_details/view_details.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +14,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Almarai'),
+      theme: ThemeData(
+        // Define the default brightness and colors.
+        brightness: Brightness.light,
+        primaryColor: Colors.green,
+        accentColor: Colors.cyan,
+        backgroundColor: Colors.orange,
+        buttonColor: Colors.green,
+        splashColor: Colors.blue[100],
+        highlightColor: Colors.blue[50],
+
+        fontFamily: 'Almarai',
+      ),
       title: 'Ojos',
       home: MySplash(),
     );
@@ -31,7 +42,7 @@ class _MySplashState extends State<MySplash> {
   Widget build(BuildContext context) {
     return SplashScreen(
       seconds: 5,
-      navigateAfterSeconds: ViewDetails(),
+      navigateAfterSeconds: HomePage(),
       // image: Image.asset('images/splash_ojos.png'),
       imageBackground: AssetImage('images/splash.png'),
       backgroundColor: Color(0xff2A357C),
