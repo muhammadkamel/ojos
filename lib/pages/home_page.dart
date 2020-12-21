@@ -12,6 +12,7 @@ import '../components/select_grade.dart';
 import '../components/view_glasses.dart';
 import '../components/view_lenses.dart';
 import '../components/view_videos.dart';
+import '../widgets/custom_drawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -19,7 +20,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int index = 3;
+  int index = 4;
+
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   // Init
 
@@ -29,11 +32,14 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xffF8F8F8),
+        // appBar: AppBar(),
+        key: _scaffoldKey,
         body: SingleChildScrollView(
           child: Container(
             // color: Colors.red,
             alignment: Alignment.center,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(height: 35),
                 Header(),
@@ -83,6 +89,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+        endDrawer: CustomEndDrawer(),
         bottomNavigationBar: Container(
           // height: 100,
           decoration: BoxDecoration(
@@ -108,7 +116,7 @@ class _HomePageState extends State<HomePage> {
             items: [
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
-                  'images/home.svg',
+                  'images/profile.svg',
                   color: index == 0 ? Color(0xff2A357C) : Color(0xff484848),
                 ),
                 label: 'حسابي',
@@ -121,42 +129,47 @@ class _HomePageState extends State<HomePage> {
                 label: 'الأقسام',
               ),
               BottomNavigationBarItem(
-                icon: Container(
-                  // margin: EdgeInsets.only(top: 10),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    boxShadow: kBoxShadow,
-                    border: Border.all(
-                      width: 5,
-                      color: Colors.white,
-                    ),
-                  ),
+                icon: Center(
                   child: Container(
-                    width: 50,
-                    height: 50,
+                    // margin: EdgeInsets.only(top: 10),
                     decoration: BoxDecoration(
-                      color: Color(0xff2A357C),
                       shape: BoxShape.circle,
+                      boxShadow: kBoxShadow,
                       border: Border.all(
-                        width: 1,
-                        color: Color(0xffF0B76E),
+                        width: 5,
+                        color: Colors.white,
                       ),
                     ),
-                    child: Container(
-                      alignment: Alignment.center,
-                      width: 20,
-                      height: 20,
-                      child: SvgPicture.asset(
-                        'images/shoping_cart.svg',
-                        // fit: BoxFit.cover,
-                        width: 26,
-                        // height: 10,
-                        color: Color(0xffF0B76E),
+                    child: Center(
+                      child: Container(
+                        width: 70,
+                        height: 70,
+                        // margin: EdgeInsets.only(top: 10),
+                        decoration: BoxDecoration(
+                          color: Color(0xff2A357C),
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            width: 1,
+                            color: Color(0xffF0B76E),
+                          ),
+                        ),
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 20,
+                          height: 20,
+                          child: SvgPicture.asset(
+                            'images/shoping_cart.svg',
+                            // fit: BoxFit.cover,
+                            width: 26,
+                            // height: 10,
+                            color: Color(0xffF0B76E),
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ),
-                label: index == 2 ? 'Cart' : '',
+                label: index == 2 ? '' : '',
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(

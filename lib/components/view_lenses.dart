@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ojos/pages/sun_glas/view_details_sun.dart';
 
 class ViewLenses extends StatefulWidget {
   const ViewLenses({
@@ -43,95 +44,106 @@ class _ViewLensesState extends State<ViewLenses> {
                       child: Column(
                         children: [
                           // Yellow - Glasses
-                          Stack(
-                            overflow: Overflow.visible,
-                            children: [
-                              Container(
-                                height: 150,
-                                decoration: BoxDecoration(
-                                  // color: Colors.greenAccent,
-                                  borderRadius: BorderRadius.circular(14),
-                                  image: DecorationImage(
-                                    image: AssetImage('images/lenses1.png'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                top: 5,
-                                left: 7,
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  width: 60,
-                                  height: 26,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => ViewDetailsSun(),
+                                  ));
+                            },
+                            child: Stack(
+                              overflow: Overflow.visible,
+                              children: [
+                                Container(
+                                  height: 150,
                                   decoration: BoxDecoration(
-                                    border: Border.all(
-                                      width: 1.0,
-                                      color: Color(0xffE8E8E8),
-                                    ),
-                                    color: Color(0xff2A357C),
-                                    borderRadius: BorderRadius.circular(50),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'جديد',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                      Icon(
-                                        Icons.local_fire_department_sharp,
-                                        color: Color(0xffF0B76E),
-                                        size: 20,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                top: 34,
-                                left: 10,
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  // width: 46,
-                                  // height: 30,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      width: 1.0,
-                                      color: Color(0xffE8E8E8),
-                                    ),
-                                    color: Colors.white,
+                                    // color: Colors.greenAccent,
                                     borderRadius: BorderRadius.circular(14),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        '4',
-                                        style: TextStyle(
-                                          color: Color(0xff484848),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20,
-                                        ),
-                                      ),
-                                      Icon(
-                                        Icons.star,
-                                        color: Color(0xffFECA00),
-                                        size: 18,
-                                      ),
-                                    ],
+                                    image: DecorationImage(
+                                      image: AssetImage('images/lenses1.png'),
+                                      fit: BoxFit.fill,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                                Positioned(
+                                  top: 5,
+                                  left: 7,
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    width: 60,
+                                    height: 26,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        width: 1.0,
+                                        color: Color(0xffE8E8E8),
+                                      ),
+                                      color: Color(0xff2A357C),
+                                      borderRadius: BorderRadius.circular(50),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'جديد',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        Icon(
+                                          Icons.local_fire_department_sharp,
+                                          color: Color(0xffF0B76E),
+                                          size: 20,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  top: 34,
+                                  left: 10,
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    // width: 46,
+                                    // height: 30,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        width: 1.0,
+                                        color: Color(0xffE8E8E8),
+                                      ),
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(14),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          '4',
+                                          style: TextStyle(
+                                            color: Color(0xff484848),
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 20,
+                                          ),
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xffFECA00),
+                                          size: 18,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                           Container(
                             // height: 80,

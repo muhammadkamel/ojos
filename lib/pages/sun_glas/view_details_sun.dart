@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ojos/pages/item_details/page_view_items.dart';
+import 'package:ojos/pages/sun_glas/page_view_sun.dart';
 import 'package:ojos/shared/consts.dart';
 import 'package:ojos/widgets/buy_lens.dart';
 
-class ViewDetails extends StatefulWidget {
+class ViewDetailsSun extends StatefulWidget {
   @override
-  _ViewDetailsState createState() => _ViewDetailsState();
+  _ViewDetailsSunState createState() => _ViewDetailsSunState();
 }
 
-class _ViewDetailsState extends State<ViewDetails> {
+class _ViewDetailsSunState extends State<ViewDetailsSun> {
   @override
   Widget build(BuildContext context) {
     Size _screenSize = MediaQuery.of(context).size;
@@ -95,7 +95,7 @@ class _ViewDetailsState extends State<ViewDetails> {
                   child: Column(
                     children: [
                       SizedBox(height: 20),
-                      PageViewItems(),
+                      PageViewSun(),
                       Container(
                         // color: Colors.yellow,
                         margin: EdgeInsets.only(top: 10),
@@ -574,35 +574,33 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Container(
-        // alignment: Alignment.center,
-        margin: EdgeInsets.symmetric(horizontal: 3),
-        child: OutlineButton.icon(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 14),
-          borderSide: BorderSide(
-            width: 0.5,
-            color: Color(0xffE8E8E8),
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(20),
-            ),
-          ),
-          onPressed: () {
-            print('Tettt');
-          },
-          icon: svgIcon,
-          label: Text(
-            // 'إضافة للسلة',
-            title,
-            style: TextStyle(
-              color: Color(0xff2A357C),
-              fontWeight: FontWeight.bold,
-            ),
+    return Container(
+      alignment: Alignment.center,
+      margin: EdgeInsets.symmetric(horizontal: 1),
+      child: OutlineButton.icon(
+        // padding: EdgeInsets.symmetric(vertical: 10, horizontal: 14),
+        borderSide: BorderSide(
+          width: 0.5,
+          color: Color(0xffE8E8E8),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(20),
           ),
         ),
+        onPressed: () {
+          print('Tettt');
+        },
+        icon: Text(
+          // 'إضافة للسلة',
+          title,
+          style: TextStyle(
+            color: Color(0xff2A357C),
+            fontWeight: FontWeight.bold,
+            fontSize: 12,
+          ),
+        ),
+        label: svgIcon,
       ),
     );
   }

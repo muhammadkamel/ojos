@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Header extends StatelessWidget {
+class Header extends StatefulWidget {
+  @override
+  _HeaderState createState() => _HeaderState();
+}
+
+class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     Size _screenSize = MediaQuery.of(context).size;
@@ -78,10 +83,18 @@ class Header extends StatelessWidget {
               ),
               color: Colors.white,
             ),
-            child: Icon(
-              Icons.dehaze,
-              size: 30,
-              color: Color(0xff484848),
+            child: IconButton(
+              onPressed: () {
+                // Navigator.push(context, route)
+                setState(() {
+                  Scaffold.of(context).openEndDrawer();
+                });
+              },
+              icon: Icon(
+                Icons.dehaze,
+                size: 30,
+                color: Color(0xff484848),
+              ),
             ),
           ),
         ],
