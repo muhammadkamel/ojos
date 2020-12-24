@@ -28,6 +28,7 @@ flutter:
   assets:
     - images/
     - images/faces/
+    - images/drawer/
     - images/shopping/
     
   fonts:

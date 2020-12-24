@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ojos/pages/home_page.dart';
 import 'package:splashscreen/splashscreen.dart';
-
-import 'pages/shopping/select_style.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,8 +32,8 @@ class _MySplashState extends State<MySplash> {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      seconds: 5,
-      navigateAfterSeconds: SelectStyle(),
+      seconds: 3,
+      navigateAfterSeconds: HomePage(),
       // image: Image.asset('images/splash_ojos.png'),
       imageBackground: AssetImage('images/splash.png'),
       backgroundColor: Color(0xff2A357C),

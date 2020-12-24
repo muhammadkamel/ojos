@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ojos/components/custom_search.dart';
 import 'package:ojos/shared/consts.dart';
+import 'package:ojos/widgets/custom_drawer.dart';
 
 import '../components/category.dart';
-import '../components/header.dart';
 import '../components/images_view.dart';
 import '../components/new_products.dart';
 import '../components/result.dart';
@@ -12,23 +12,51 @@ import '../components/select_grade.dart';
 import '../components/view_glasses.dart';
 import '../components/view_lenses.dart';
 import '../components/view_videos.dart';
-import '../widgets/custom_drawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  AnimationController _animationController;
+
   int index = 4;
 
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   // Init
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(
+        seconds: 3,
+      ),
+    )
+      ..forward()
+      ..addListener(() {
+        setState(() {});
+      });
+  }
 
   @override
   Widget build(BuildContext context) {
     Size _screenSize = MediaQuery.of(context).size;
+
+    double animValue = _animationController.value;
+    // final slideAmount = maxSlide * animValue;
+    final contentScale = 1.0 - (0.3 * animValue);
+
+    //
+    TextStyle _textStyle = const TextStyle(
+      color: Colors.white,
+      fontSize: 20,
+    );
+    SizedBox sizedBox = SizedBox(width: 17);
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xffF8F8F8),
@@ -36,24 +64,121 @@ class _HomePageState extends State<HomePage> {
         key: _scaffoldKey,
         body: SingleChildScrollView(
           child: Container(
-            // color: Colors.red,
+            color: Colors.white,
             alignment: Alignment.center,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(height: 35),
-                Header(),
+                Container(
+                  width: _screenSize.width * 0.96,
+                  // color: Colors.redAccent,
+                  margin: EdgeInsets.only(bottom: 12),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Stack(
+                        overflow: Overflow.visible,
+                        children: [
+                          Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 0.9,
+                                color: Color(0xffE8E8E8),
+                              ),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(14),
+                              ),
+                              color: Colors.white,
+                            ),
+                            child: Icon(
+                              Icons.notifications_none_outlined,
+                              color: Color(0xff484848),
+                              size: 37,
+                            ),
+                          ),
+                          Positioned(
+                            top: -3,
+                            left: -3,
+                            child: Container(
+                              width: 18,
+                              height: 18,
+                              decoration: BoxDecoration(
+                                color: Color(0xffF0B76E),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  '5',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SvgPicture.asset(
+                        'images/brand logo.svg',
+                        fit: BoxFit.cover,
+                        width: 80,
+                        height: 34,
+                      ),
+                      Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 0.9,
+                            color: Color(0xffE8E8E8),
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(14),
+                          ),
+                          color: Colors.white,
+                        ),
+                        child: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              _scaffoldKey.currentState.openEndDrawer();
+                            });
+                          },
+                          icon: Icon(
+                            Icons.dehaze,
+                            size: 30,
+                            color: Color(0xff484848),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
                 CustomSearch(),
+
                 ImagesView(),
+
                 Category(),
+
                 Result(),
+
                 SelectGrade(),
+
                 ViewVideos(),
 
                 // Title
+
                 Container(
                   width: _screenSize.width * 0.96,
+
                   // color: Colors.blue,
+
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -79,18 +204,57 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
+
                 SizedBox(height: 5),
+
                 NewProducts(),
+
                 ViewGlasses(),
+
                 // SizedBox(height: 20),
+
                 ViewLenses(),
+
+                // End
+                Container(
+                  color: Colors.purple,
+                  height: 30,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Center(child: Text('Text')),
+                      Container(
+                        width: 100,
+                        height: 20,
+                        color: Colors.green,
+                      ),
+                      Container(
+                        width: 100,
+                        height: 20,
+                        color: Colors.orange,
+                      ),
+                      Container(
+                        width: 100,
+                        height: 20,
+                        color: Colors.redAccent,
+                      ),
+                      Container(
+                        width: 100,
+                        height: 20,
+                        color: Colors.green,
+                      ),
+                      Container(
+                        width: 100,
+                        height: 20,
+                        color: Colors.orange,
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-
-        endDrawer: CustomEndDrawer(),
         bottomNavigationBar: Container(
           // height: 100,
           decoration: BoxDecoration(
@@ -188,6 +352,8 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        endDrawer: CustomEndDrawer(),
       ),
     );
   }
